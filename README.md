@@ -40,7 +40,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 🚀 Getting Started
 
-- Up-To-Do App is designed to help users organize their tasks efficiently and stay productive throughout their day. Whether it's managing daily tasks, work assignments, or personal goals.
+- contacts_app  is designed to help users organize their tasks efficiently and stay productive throughout their day. Whether it's managing daily tasks, work assignments, or personal goals.
 - App notifies the user of the task before starting using `flutter_local_notifications`.
 - Our App reminds users every day at 9 PM ⏰to write tasks for tomorrow.
 
