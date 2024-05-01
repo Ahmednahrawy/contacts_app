@@ -8,6 +8,9 @@ void main() {
           primarySwatch: Colors.blue,
           appBarTheme: const AppBarTheme(backgroundColor: Colors.blue)),
       home: const HomePage(),
+      routes: {
+        '/new-contact': (context) => const NewContactView(),
+      },
     ),
   );
 }
@@ -60,9 +63,61 @@ class HomePage extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          await Navigator.of(context).pushNamed('/new_contact');
+        },
         shape: const CircleBorder(eccentricity: 1),
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class NewContactView extends StatefulWidget {
+  const NewContactView({super.key});
+
+  @override
+  State<NewContactView> createState() => _NewContactViewState();
+}
+
+class _NewContactViewState extends State<NewContactView> {
+  late final TextEditingController _controller;
+
+  @override
+  void initState() {
+    _controller = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Add Contact"),
+      ),
+      body: Column(
+        children: [
+          TextField(
+            controller: _controller,
+            decoration: const InputDecoration(
+              hintText: 'Enter name here...',
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              final contact = Contact(name: _controller.text);
+              ContactBook().add(contact: contact);
+              Navigator.of(context).pop();
+            },
+            child: const Text('Add contact'),
+          ),
+        ],
       ),
     );
   }
