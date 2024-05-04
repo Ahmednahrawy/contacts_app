@@ -132,6 +132,12 @@ class _NewContactViewState extends State<NewContactView> {
               hintText: 'Enter Contact name here...',
             ),
           ),
+          TextField(
+            controller: _controller,
+            decoration: const InputDecoration(
+              hintText: 'Phone number here...',
+            ),
+          ),
           TextButton(
             onPressed: () {
               final contact = Contact(name: _controller.text);
