@@ -29,8 +29,6 @@ class ContactBook extends ValueNotifier<List<Contact>> {
   static final ContactBook _shared = ContactBook._sharedInstance();
   factory ContactBook() => _shared;
 
-  final List<Contact> _contacts = [];
-
   int get length => value.length;
 
   void add({required Contact contact}) {
@@ -131,7 +129,13 @@ class _NewContactViewState extends State<NewContactView> {
           TextField(
             controller: _controller,
             decoration: const InputDecoration(
-              hintText: 'Enter name here...',
+              hintText: 'Enter Contact name ...',
+            ),
+          ),
+          TextField(
+            controller: _controller,
+            decoration: const InputDecoration(
+              hintText: 'Phone number here...',
             ),
           ),
           TextButton(
