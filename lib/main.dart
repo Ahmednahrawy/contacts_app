@@ -129,7 +129,11 @@ class _NewContactViewState extends State<NewContactView> {
           TextField(
             controller: _controller,
             decoration: const InputDecoration(
+<<<<<<< HEAD
               hintText: 'Enter Contact name ...',
+=======
+              hintText: 'Enter Contact name here...',
+>>>>>>> develop
             ),
           ),
           TextField(
